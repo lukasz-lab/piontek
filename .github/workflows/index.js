@@ -6,3 +6,4 @@ kartofel
 dupalog
 sraj
 console
+magicmata
