@@ -1,4 +1,4 @@
-name: Bump package in dependent repos on release
+name: Bump package in dependent repos on releases
 
 on:
   release:
@@ -10,14 +10,14 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Bumping
-        uses: derberg/org-projects-dependency-manager@a584b3af6e4aabed1b1cb6c2fc045db81d744aed
+        uses: derberg/npm-dependency-manager-for-your-github-org@38f30a2c8004a7726857c577186c9dc93b252fa0
         with:
+          custom_id: "dependency update from asyncapi bot"
           github_token: ${{ secrets.CUSTOM_TOKEN }}
           repos_to_ignore: "piontek"
-          packagejson_path: ./gleboko
           committer_username: pomidor
           committer_email: pomidor@pomidor.com
-          commit_message_prod: "fix: update internal production dependencies"
-          commit_message_dev: "chore: update internal development dependencies"
+          packagejson_path: ./gleboko
+          base_branch: dupa
