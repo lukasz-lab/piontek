@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Bumping
-        uses: derberg/npm-dependency-manager-for-your-github-org@d66707faa94121bddae711049dfa4988899151e5
+        uses: derberg/npm-dependency-manager-for-your-github-org@0d4d9d50a9ec89a6f369ae871326e9f5c11e1685
         with:
           custom_id: "dependency update from asyncapi bot"
           github_token: ${{ secrets.CUSTOM_TOKEN }}
